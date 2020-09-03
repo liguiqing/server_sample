@@ -1,0 +1,2 @@
+${AnsiColor.BRIGHT_BLUE}:: Sample 🤓  :: Running Spring Boot ${spring-boot.version} ::
+:: 卐卐卐卐卐卐卐卐卐卐卐卐卐卐卐卐 Malilihong 卐卐卐卐卐卐卐卐卐卐卐卐卐卐卐卐::${AnsiColor.DEFAULT}
