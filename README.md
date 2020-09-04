@@ -1,6 +1,6 @@
 # Guozhi interview for java developer
 
-# you can try the default accounts：admin/admin
+### you can try the default accounts：admin/admin after you start the project
 
 ## Requires
 
