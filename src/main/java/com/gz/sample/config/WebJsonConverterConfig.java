@@ -29,6 +29,7 @@ import java.util.List;
 @Configuration
 public class WebJsonConverterConfig implements WebMvcConfigurer {
 
+    public static final String ISO_ZONED_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.nnnnnn'Z'";
     @Override
     public void configureMessageConverters(List<HttpMessageConverter<?>> converters) {
         MappingJackson2HttpMessageConverter jackson2HttpMessageConverter = new MappingJackson2HttpMessageConverter();
@@ -40,9 +41,13 @@ public class WebJsonConverterConfig implements WebMvcConfigurer {
 
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addSerializer(ZonedDateTime.class,
-            new ZonedDateTimeSerializer(DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSSXXX")));
+            new ZonedDateTimeSerializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
+        javaTimeModule.addSerializer(ZonedDateTime.class,
+            new ZonedDateTimeSerializer(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         javaTimeModule.addDeserializer(ZonedDateTime.class,
-            new ZonedDateTimeDeserializer());
+            new ZonedDateTimeDeserializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
+        javaTimeModule.addDeserializer(ZonedDateTime.class,
+            new ZonedDateTimeDeserializer(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         objectMapper.registerModule(javaTimeModule);
         objectMapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         jackson2HttpMessageConverter.setObjectMapper(objectMapper);

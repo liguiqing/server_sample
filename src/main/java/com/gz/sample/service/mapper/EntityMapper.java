@@ -1,5 +1,9 @@
 package com.gz.sample.service.mapper;
 
+import com.gz.sample.infrastructure.domain.EntityObject;
+import com.gz.sample.lang.ReflectionWrapper;
+
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -9,7 +13,7 @@ import java.util.List;
  * @param <E> - Entity type parameter.
  */
 
-public interface EntityMapper <D, E> {
+public interface EntityMapper <K extends Serializable,D, E extends EntityObject<K>> {
 
     E toEntity(D dto);
 
@@ -18,4 +22,17 @@ public interface EntityMapper <D, E> {
     List <E> toEntity(List<D> dtoList);
 
     List <D> toDto(List<E> entityList);
+
+    default E fromId(K id) {
+        if (id == null) {
+            return null;
+        }
+        E e = ReflectionWrapper.newInstanceOf(getEntityClass());
+        e.setId(id);
+        return e;
+    }
+
+    default Class<E> getEntityClass(){
+        return (Class<E>) this.getClass();
+    }
 }

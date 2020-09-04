@@ -1,7 +1,7 @@
 <template>
   <div id="home">
     <!--sample-->
-    <div v-for="account in accounts" :key="account.id">{{ account.name }}</div>
+    <div></div>
   </div>
 </template>
 <script lang="ts" src="./home.component.ts">

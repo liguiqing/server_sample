@@ -1,0 +1,14 @@
+id;user_id;title;deadline;is_active
+1;1;Title1;2020-08-02;false
+2;1;Title2;2020-08-02;false
+3;1;Title3;2020-08-02;true
+4;1;Title4;2020-08-02;false
+5;1;Title5;2020-08-02;true
+6;2;Title6;2020-08-02;false
+7;2;Title7;2020-08-02;false
+8;3;Title8;2020-08-02;false
+9;3;Title9;2020-08-02;true
+10;4;Title0;2020-08-02;false
+
+
+

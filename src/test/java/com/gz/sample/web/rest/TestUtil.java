@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
+import com.gz.sample.config.ZonedDateTimeDeserializer;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeDiagnosingMatcher;
 import org.springframework.format.datetime.standard.DateTimeFormatterRegistrar;
@@ -17,9 +19,11 @@ import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 import java.io.IOException;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
+import static com.gz.sample.config.WebJsonConverterConfig.ISO_ZONED_DATETIME_PATTERN;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -30,10 +34,19 @@ public final class TestUtil {
     private static final ObjectMapper mapper = createObjectMapper();
 
     private static ObjectMapper createObjectMapper() {
-        ObjectMapper mapper = new ObjectMapper();
+        var mapper = new ObjectMapper();
         mapper.configure(SerializationFeature.WRITE_DURATIONS_AS_TIMESTAMPS, false);
         mapper.setSerializationInclusion(JsonInclude.Include.NON_EMPTY);
-        mapper.registerModule(new JavaTimeModule());
+        var javaTimeModule = new JavaTimeModule();
+
+        javaTimeModule.addSerializer(ZonedDateTime.class,
+            new ZonedDateTimeSerializer(DateTimeFormatter.ISO_ZONED_DATE_TIME));
+        javaTimeModule.addSerializer(ZonedDateTime.class,
+            new ZonedDateTimeSerializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
+        javaTimeModule.addDeserializer(ZonedDateTime.class,
+            new ZonedDateTimeDeserializer());
+        mapper.registerModule(javaTimeModule);
+        mapper.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
         return mapper;
     }
 

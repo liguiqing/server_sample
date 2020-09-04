@@ -1,0 +1,12 @@
+id;sample_id;name;joined_time;is_alive
+1;1;Chile1;2020-08-01T10:54:10;false
+2;1;Chile;2020-08-01T10:54:10;false
+3;1;Chile;2020-08-01T10:54:10;true
+4;1;Chile;2020-08-01T10:54:10;false
+5;1;Chile;2020-08-01T10:54:10;true
+6;2;Chile;2020-08-01T10:54:10;false
+7;3;Chile;2020-08-01T10:54:10;false
+8;4;Chile;2020-08-01T10:54:10;false
+9;5;Chile;2020-08-01T10:54:10;true
+10;4;Chile;2020-08-01T10:54:10;false
+

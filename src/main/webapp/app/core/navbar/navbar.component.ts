@@ -4,7 +4,18 @@ import LoginService from '@/account/login.service';
 import AccountService from '@/account/account.service';
 import TranslationService from '@/locale/translation.service';
 
-@Component
+@Component({
+  watch: {
+    actived() {
+      if (this.actived === 0) {
+        this.$router.push({ name: 'Home' });
+      }
+      if (this.actived === 1) {
+        this.$router.push({ name: 'Sample' });
+      }
+    },
+  },
+})
 export default class JhiNavbar extends Vue {
   @Inject('loginService') private loginService: () => LoginService;
   @Inject('translationService') private translationService: () => TranslationService;
@@ -20,7 +31,7 @@ export default class JhiNavbar extends Vue {
   }
 
   public toSettings() {
-
+    console.log('To settings');
   }
 
   public changeLanguage(newLanguage: string): void {

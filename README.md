@@ -116,12 +116,11 @@ For more information, refer to the [Running tests page][].
 
 ### Requires
 
-
-1.Run the project Client side and Server side by your IDE such as Eclipse,IntelliJ IDEA,VS Code .etc. **when you done this stop and sign in,We have an example to help you do this task.**
+1.Run the project Client side and Server side by your IDE such as Eclipse,IntelliJ IDEA,VS Code .etc. **when you done this step and sign in,We have an example to help you do next tasks.**
 2.Create Entity Objects mapped to tables with annotations
 tables：
 [sample_clazz,sample_student,sample_course,sample_study]
-the Entity Object must extends 
+the Entity Object must extends
 [com.gz.sample.infrastructure.domain.LongIdEntityObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdEntityObject.java)
 or
 [com.gz.sample.infrastructure.domain.LongIdValueObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdValueObject.java)
@@ -130,8 +129,6 @@ or
 5.Create Resources to provide rest APIS
 6.Create Unit tests Repositories and Resources which your code
 7.Show all student study data with ElementUI components such as [Table],[Card] .etc just you like.
-  for more information of [ElementUI]() ,refer to the [ElementUI](https://element.eleme.io/#/zh-CN/component/installation) page
+for more information of [ElementUI]() ,refer to the [ElementUI](https://element.eleme.io/#/zh-CN/component/installation) page
 
 you have three days only,any question,contact to <liguiqing@guozhihrm.com>
-
-

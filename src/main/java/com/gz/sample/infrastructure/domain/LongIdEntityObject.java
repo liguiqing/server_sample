@@ -29,12 +29,9 @@ public abstract class LongIdEntityObject implements EntityObject<Long> {
         this.id = id;
     }
 
-
     @Override
     public boolean equals(Object o) {
         LongIdEntityObject that = (LongIdEntityObject) o;
-
-        //id相同的时候，entityId必须相同
         return Objects.equal(id, that.id);
     }
 

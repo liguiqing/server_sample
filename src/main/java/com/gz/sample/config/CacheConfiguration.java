@@ -47,9 +47,9 @@ public class CacheConfiguration {
             createCache(cm, com.gz.sample.repository.UserRepository.USERS_BY_EMAIL_CACHE);
             createCache(cm, com.gz.sample.domain.User.class.getName());
             createCache(cm, com.gz.sample.domain.Authority.class.getName());
+            createCache(cm, com.gz.sample.domain.Sample.class.getName());
+            createCache(cm, com.gz.sample.domain.Sample.class.getName()+ ".children" );
             createCache(cm, com.gz.sample.domain.User.class.getName() + ".authorities");
-
-            // jhipster-needle-ehcache-add-entry
         };
     }
 

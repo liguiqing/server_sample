@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Component from 'vue-class-component';
 import Navbar from '@/core/navbar/navbar.vue';
 import LoginForm from '@/account/login-form/login-form.vue';
+import { Inject } from 'vue-property-decorator';
+import TranslationService from './locale/translation.service';
 
 @Component({
   components: {
@@ -10,7 +12,10 @@ import LoginForm from '@/account/login-form/login-form.vue';
   },
 })
 export default class App extends Vue {
-  public created(): void {}
+  @Inject('translationService') private translationService: () => TranslationService;
+  public created(): void {
+    this.translationService().refreshTranslation('zh-cn');
+  }
 
   public closeLoginDialog(done): void {
     done();

@@ -9,6 +9,7 @@ import Router from 'vue-router';
 import { Authority } from '@/shared/security/authority';
 const Home = () => import('@/core/home/home.vue');
 const Error = () => import('@/core/error/error.vue');
+const Sample = () => import('@/core/sample/sample.vue');
 
 Vue.use(Router);
 
@@ -20,6 +21,12 @@ export default new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      meta: { authorities: [Authority.USER] },
+    },
+    {
+      path: '/sample',
+      name: 'Sample',
+      component: Sample,
       meta: { authorities: [Authority.USER] },
     },
     {

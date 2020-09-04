@@ -10,17 +10,7 @@ import { IAccount } from '@/account/account.model';
 
 @Component
 export default class Home extends mixins(JhiDataUtils, AlertMixin) {
-  @Inject('loginService') private loginService: () => LoginService;
-  @Inject('accountService') private accountService: () => AccountService;
-
-  public accounts: IAccount[] = [];
-
   mounted(): void {
-    this.accountService()
-      .getAllAccout()
-      .then(data => {
-        // render the student studies data  here
-        //
-      });
+    console.log('Helo baby!');
   }
 }

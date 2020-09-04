@@ -1,6 +1,7 @@
 package com.gz.sample.domain;
 
 import com.google.common.base.Objects;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -22,7 +23,8 @@ public class PersistentAuditEvent implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(generator = "idGenerator")
+    @GenericGenerator(name = "idGenerator", strategy = "com.gz.sample.infrastructure.repository.hibernate.MyIdGenerator")
     @Column(name = "event_id")
     private Long id;
 

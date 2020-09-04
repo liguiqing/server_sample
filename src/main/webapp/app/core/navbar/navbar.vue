@@ -12,7 +12,8 @@
           <li class="space"></li>
           <li v-if="!authenticated" class="space"></li>
           <li v-if="!authenticated" class="space"></li>
-          <li><span v-text="$t('global.menu.home')" :class="{ 'is-active': actived === 0 }" @click="toHome()">Home</span></li>
+          <li><span v-text="$t('global.menu.home')" :class="{ 'is-active': actived === 0 }" @click="actived = 0">Home</span></li>
+          <li><span v-text="$t('global.menu.sample')" :class="{ 'is-active': actived === 1 }" @click="actived = 1">Sample</span></li>
           <li v-if="!authenticated"><span string v-text="$t('global.menu.account.login')" @click="openLogin()">Login</span></li>
           <li class="user-settings" v-else>
             <el-dropdown>

@@ -25,5 +25,5 @@ export const PASSWORD_PATTERN: RegExp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[^]{6,20
 // Form Fields
 export const USER_NAME_MAXLENGTH = 20;
 export const USER_NAME_MINLENGTH = 3;
-export const PASSWORD_MINLENGTH = 6;
+export const PASSWORD_MINLENGTH = 4;
 export const PASSWORD_MAXLENGTH = 20;

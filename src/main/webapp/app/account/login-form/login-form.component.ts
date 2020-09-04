@@ -87,8 +87,7 @@ export default class LoginForm extends Vue {
 
   public doLogin(): void {
     const account = {
-      model: this.activeName,
-      login: '',
+      username: '',
       password: '',
       rememberMe: false,
     };
@@ -101,7 +100,7 @@ export default class LoginForm extends Vue {
         this.$refs.vcode.focus();
         return;
       }
-      account.login = this.mobileLogin.mobile;
+      account.username = this.mobileLogin.mobile;
       account.password = this.mobileLogin.vcode;
       this.toLogin(account);
     } else {
@@ -109,7 +108,7 @@ export default class LoginForm extends Vue {
       el.validate(
         (valid, fields) => {
           if (valid) {
-            account.login = this.userLogin.login;
+            account.username = this.userLogin.login;
             account.password = this.userLogin.password;
             account.rememberMe = this.rememberMe;
             this.toLogin(account);

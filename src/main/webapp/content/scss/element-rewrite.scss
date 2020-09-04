@@ -61,6 +61,7 @@ nav {
         display: inline;
         line-height: 25px;
         margin: 30px 5px;
+        word-break: keep-all;
         span,
         a {
           cursor: pointer;

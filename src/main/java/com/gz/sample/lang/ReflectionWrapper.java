@@ -1,5 +1,6 @@
 package com.gz.sample.lang;
 
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -49,6 +50,15 @@ public class ReflectionWrapper {
         } catch (NoSuchMethodException | InstantiationException | IllegalAccessException | InvocationTargetException e) {
             log.error(ThrowableToString.toString(e));
             throw new BusinessException(1000101,String.format("实例化%s错误",cls.getName()));
+        }
+    }
+
+    public static void writeField(final Object target, final String fieldName, final Object value){
+        try {
+            FieldUtils.writeField(target,fieldName,value,true);
+        } catch (IllegalAccessException e) {
+            log.error(ThrowableToString.toString(e));
+            throw new BusinessException(1000102,String.format("%s属性%s写入错误",target.getClass().getName(),fieldName));
         }
     }
 }

@@ -18,5 +18,7 @@
     <include file="config/liquibase/changelog/20200802094331_added_entity_Course.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200802094631_added_entity_Student.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20200802094731_added_entity_Study.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200802094631_added_entity_Sample.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200802094631_added_entity_SampleChildren.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>
