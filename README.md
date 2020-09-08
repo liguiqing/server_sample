@@ -45,8 +45,8 @@ We use npm scripts and [Webpack][] as our build system.
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
 
-    ./mvnw
-    npm start
+  
+    npm run start
 
 Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `npm update` and `npm install` to manage dependencies.
@@ -113,7 +113,7 @@ will generate open Vue Project Manager. From there, you'll be able to manage you
 
 To build the final jar and optimize the sample application for production, run:
 
-    ./mvnw -Pprod clean verify
+    mvn -Pprod clean verify
 
 This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
 To ensure everything worked, run:
@@ -126,12 +126,12 @@ Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 To package your application as a war in order to deploy it to an application server, run:
 
-    ./mvnw -Pprod,war clean verify
+    mvn -Pprod,war clean verify
 
 ## Testing
 
 To launch your application's tests, run:
-./mvnw verify
+mvn test
 
 ### Client tests
 
