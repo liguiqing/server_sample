@@ -8,6 +8,7 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.ZonedDateTimeSerializer;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -15,6 +16,7 @@ import org.springframework.http.converter.json.MappingJackson2HttpMessageConvert
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import java.time.LocalDateTime;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
@@ -39,13 +41,11 @@ public class WebJsonConverterConfig implements WebMvcConfigurer {
         simpleModule.addSerializer(Long.TYPE, ToStringSerializer.instance);
         objectMapper.registerModule(simpleModule);
 
-        JavaTimeModule javaTimeModule = new JavaTimeModule();
+        var javaTimeModule = new JavaTimeModule();
         javaTimeModule.addSerializer(ZonedDateTime.class,
             new ZonedDateTimeSerializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
-        javaTimeModule.addSerializer(ZonedDateTime.class,
-            new ZonedDateTimeSerializer(DateTimeFormatter.ISO_ZONED_DATE_TIME));
-        javaTimeModule.addDeserializer(ZonedDateTime.class,
-            new ZonedDateTimeDeserializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
+        javaTimeModule.addSerializer(LocalDateTime.class,
+            new LocalDateTimeSerializer(DateTimeFormatter.ofPattern(ISO_ZONED_DATETIME_PATTERN)));
         javaTimeModule.addDeserializer(ZonedDateTime.class,
             new ZonedDateTimeDeserializer(DateTimeFormatter.ISO_ZONED_DATE_TIME));
         objectMapper.registerModule(javaTimeModule);
