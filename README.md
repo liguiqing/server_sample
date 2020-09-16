@@ -11,7 +11,8 @@
    You just talk to us **How can display [Sample](src/main/java/com/gz/sample/domain/Sample.java) to web page from database when remote interview ** only.
    
 **Optional**
-**you can try do the next tasks. if you can fininsh and tell us why, congratulations，welcome to join us! come on!**
+
+**you can try do the next tasks. if you can fininsh by you self and tell us how, congratulations，welcome to join us! come on!**
 
 2.Create Entity Objects mapped to tables with annotations
 
