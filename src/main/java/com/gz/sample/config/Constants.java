@@ -12,7 +12,8 @@ public final class Constants {
     public static final String SYSTEM_ACCOUNT = "system";
     public static final String DEFAULT_LANGUAGE = "en";
     public static final String ANONYMOUS_USER = "anonymoususer";
-
+    public static final String DEFAULT_TIME_ZNOE = "Asia/Shanghai";
+    public static final String ISO_ZONED_DATETIME_PATTERN = "yyyy-MM-dd'T'HH:mm:ss.nnnnnn'Z'";
     private Constants() {
     }
 }

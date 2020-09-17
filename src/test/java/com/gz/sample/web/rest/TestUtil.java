@@ -23,7 +23,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.List;
 
-import static com.gz.sample.config.WebJsonConverterConfig.ISO_ZONED_DATETIME_PATTERN;
+import static com.gz.sample.config.Constants.ISO_ZONED_DATETIME_PATTERN;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**

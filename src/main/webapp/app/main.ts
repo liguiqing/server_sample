@@ -16,10 +16,10 @@ import TranslationService from '@/locale/translation.service';
 import ValidateService from '@/shared/validation/validate.service';
 import LoginService from './account/login.service';
 import AccountService from './account/account.service';
-import moment from 'moment-timezone';
+import { formatISO } from 'date-fns';
 /* tslint:enable */
 Date.prototype.toJSON = function () {
-  return moment(this).format();
+  return formatISO(this);
 };
 Vue.config.productionTip = false;
 config.initVueApp(Vue);

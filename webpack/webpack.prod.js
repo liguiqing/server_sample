@@ -10,7 +10,6 @@ const OptimizeCSSPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 const jhiUtils = require('./utils.js');
-
 const env = require('../config/prod.env');
 
 const webpackConfig = merge(baseWebpackConfig, {
@@ -111,15 +110,6 @@ const webpackConfig = merge(baseWebpackConfig, {
     }),
     // keep module.id stable when vendor modules does not change
     new webpack.HashedModuleIdsPlugin(),
-    new ForkTsCheckerWebpackPlugin({
-      vue: {
-        enabled: true,
-        compiler: 'vue-template-compiler',
-      },
-      tslint: false,
-      formatter: 'codeframe',
-      checkSyntacticErrors: false,
-    }),
   ],
 });
 
