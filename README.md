@@ -1,7 +1,41 @@
 # Guozhi interview for java developer
 
-# you can try the default accounts：admin/123456
+### you can try the default accounts：admin/admin after you start the project
 
+## Requires
+
+**Required**
+
+1. Run the project Client side and Server side by your IDE such as Eclipse,IntelliJ IDEA,VS Code .etc or commandline. 
+
+   You just talk to us How can display [Sample](src/main/java/com/gz/sample/domain/Sample.java) to web page from database when remote interview only.
+   
+**Optional**
+
+**you can try do the next tasks. if you can fininsh by you self and tell us how, congratulations，welcome to join us! come on!**
+
+2.Create Entity Objects mapped to tables with annotations
+
+tables：
+[sample_clazz,sample_student,sample_course,sample_study]
+the Entity Object must extends
+[com.gz.sample.infrastructure.domain.LongIdEntityObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdEntityObject.java)
+or
+[com.gz.sample.infrastructure.domain.LongIdValueObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdValueObject.java)
+
+3.Create JPA Repositories to persistent Entity Objects
+
+4.Create Services interface And implements to use repositories and entities
+
+5.Create Resources to provide rest APIS
+
+6.Create Unit tests Repositories and Resources which your code
+
+7.Show all student study data with ElementUI components such as [Table],[Card] .etc just you like.
+
+for more information of [ElementUI]() ,refer to the [ElementUI](https://element.eleme.io/#/zh-CN/component/installation) page
+
+you have three days only,any question,contact to <liguiqing@guozhihrm.com>
 ## Development
 
 Before you can build this project, you must install and configure the following dependencies on your machine:
@@ -19,8 +53,8 @@ We use npm scripts and [Webpack][] as our build system.
 Run the following commands in two separate terminals to create a blissful development experience where your browser
 auto-refreshes when files change on your hard drive.
 
-    ./mvnw
-    npm start
+  
+    npm run start
 
 Npm is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `npm update` and `npm install` to manage dependencies.
@@ -87,7 +121,7 @@ will generate open Vue Project Manager. From there, you'll be able to manage you
 
 To build the final jar and optimize the sample application for production, run:
 
-    ./mvnw -Pprod clean verify
+    mvn -Pprod clean verify
 
 This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
 To ensure everything worked, run:
@@ -100,12 +134,12 @@ Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
 To package your application as a war in order to deploy it to an application server, run:
 
-    ./mvnw -Pprod,war clean verify
+    mvn -Pprod,war clean verify
 
 ## Testing
 
 To launch your application's tests, run:
-./mvnw verify
+mvn test
 
 ### Client tests
 
@@ -114,21 +148,3 @@ npm test
 
 For more information, refer to the [Running tests page][].
 
-### Requires
-
-1.Run the project Client side and Server side by your IDE such as Eclipse,IntelliJ IDEA,VS Code .etc. **when you done this step and sign in,We have an example to help you do next tasks.**
-2.Create Entity Objects mapped to tables with annotations
-tables：
-[sample_clazz,sample_student,sample_course,sample_study]
-the Entity Object must extends
-[com.gz.sample.infrastructure.domain.LongIdEntityObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdEntityObject.java)
-or
-[com.gz.sample.infrastructure.domain.LongIdValueObject](src/main/java/com/gz/sample/infrastructure/domain/LongIdValueObject.java)
-3.Create JPA Repositories to persistent Entity Objects
-4.Create Services interface And implements to use repositories and entities
-5.Create Resources to provide rest APIS
-6.Create Unit tests Repositories and Resources which your code
-7.Show all student study data with ElementUI components such as [Table],[Card] .etc just you like.
-for more information of [ElementUI]() ,refer to the [ElementUI](https://element.eleme.io/#/zh-CN/component/installation) page
-
-you have three days only,any question,contact to <liguiqing@guozhihrm.com>
