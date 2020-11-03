@@ -1,18 +1,25 @@
-# Guozhi interview for java developer
+### 国智Java程序员面试项目
 
-### you can try the default accounts：admin/admin after you start the project
+### 运行项目 
 
-## Requires
+1. 后台服务启动：使用IDE 运行 [com.gz.sample.SampleApp](src/main/java/com/gz/sample/SampleApp.java)
 
-**Required**
+2. 前端启动： 在命令行窗口，cd 到项目目录，如D:\server_sample 运行命令： npm run start
 
-1. Run the project Client side and Server side by your IDE such as Eclipse,IntelliJ IDEA,VS Code .etc or commandline. 
+3. 在浏览器（推荐使用Google chrome）输入地址：loclahost:9000
 
-   You just talk to us How can display [Sample](src/main/java/com/gz/sample/domain/Sample.java) to web page from database when remote interview only.
+4. 请使用用户名admin 密码admin登录系统
+
+## 要求
+
+**必须完成的事项**
+
+1. 请向我们说明实体对象 [Sample](src/main/java/com/gz/sample/domain/Sample.java) 是如果从数据库显示到前端页面的，即前端到后台服务，到数据库的调用过程，需要解析清楚Java类之间调用逻辑关系及每个类的作用
    
-**Optional**
+**建议完成的事项**
 
-**you can try do the next tasks. if you can fininsh by you self and tell us how, congratulations，welcome to join us! come on!**
+**如果你能完成以下任务并与能说清楚是如何完成的，恭喜你通过了我们的面试考察，欢迎你加入[陕西欣佳诚人力资源集团     
+](http://www.jiachenghr.com/)旗下国智人力资源管理有限公司！**
 
 2.Create Entity Objects mapped to tables with annotations
 
