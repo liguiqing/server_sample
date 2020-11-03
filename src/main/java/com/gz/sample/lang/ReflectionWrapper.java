@@ -19,7 +19,7 @@ public class ReflectionWrapper {
     private final static Logger log = LoggerFactory.getLogger(ReflectionWrapper.class);
 
     private ReflectionWrapper() {
-        throw new AssertionError("No com.gz.jiebao.lang.ReflectionWrapper instances for you!");
+        throw new AssertionError("No com.gz.sample.lang.ReflectionWrapper instances for you!");
     }
     /**
      * 通过Class 及 constructor 参数 实例化一个对象
